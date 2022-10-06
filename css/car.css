@@ -1,0 +1,308 @@
+#mobile-radio {
+    display: none;
+    top: 946px;
+    left: 620px;
+    max-height: max-content;
+    max-width: max-content;
+    font-family: 'motorola' !important;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    letter-spacing: 0.1em;
+}
+
+#mobile-nolink {
+    top: 22px;
+    left: 128px;
+    height: 68px;
+    line-height: 60px;
+    width: var(--mobile-screen-width);
+}
+
+#mobile-power-btn {
+    left: 8px;
+    bottom: 91px;
+    width: 26px;
+    height: 25px;
+}
+
+#mobile-volume-down-knob {
+    left: 51px;
+    bottom: 63px;
+    width: 25px;
+    height: 55px;
+}
+
+#mobile-volume-up-knob {
+    left: 79px;
+    bottom: 63px;
+    width: 25px;
+    height: 55px;
+}
+
+#mobile-channel-down-knob {
+    left: 365px;
+    bottom: 63px;
+    width: 25px;
+    height: 55px;
+}
+
+#mobile-channel-up-knob {
+    left: 393px;
+    bottom: 63px;
+    width: 25px;
+    height: 55px;
+}
+
+#mobile-panicBtn {
+    left: 435px;
+    bottom: 88px;
+    width: 30px;
+    height: 30px;
+}
+
+#mobile-backlight-btn {
+    left: 73px;
+    bottom: 43px;
+    width: 34px;
+    height: 17px;
+}
+
+#mobile-red-led {
+    display: none;
+    left: 36px;
+    background-color: red;
+    top: 44px;
+    width: 15px;
+    height: 4px;
+    border-radius: 25%;
+}
+
+#mobile-yellow-led {
+    display: none;
+    left: 36px;
+    background-color: darkgoldenrod;
+    top: 53px;
+    width: 15px;
+    height: 4px;
+    border-radius: 25%;
+}
+
+#mobile-green-led {
+    display: none;
+    left: 36px;
+    background-color: green;
+    top: 61px;
+    width: 15px;
+    height: 4px;
+    border-radius: 25%;
+}
+
+#mobile-radio-display {
+    top: 24px;
+    left: 128px;
+    width: var(--mobile-screen-width);
+    height: 57px;
+    border-radius: 2px;
+}
+
+#mobile-rssi-group {
+    height: 12px;
+    left: 10px;
+}
+
+#mobile-operation {
+    left: 45px;
+}
+
+#mobile-talk-around {
+    right: 72px;
+}
+
+#mobile-scanning {
+    right: 60px;
+}
+
+#mobile-gps {
+    right: 38px;
+}
+
+#mobile-time {
+    right: 0px;
+    top: 1px;
+}
+
+#mobile-send-data {
+    left: 7px;
+}
+
+#mobile-receive-data {
+    left: 11px;
+}
+
+#mobile-monitor {
+    font-size: 1.7em;
+    top: -9px;
+    left: 30px;
+}
+
+#mobile-main-text {
+    width: var(--mobile-screen-width);
+    height: var(--mobile-screen-height);
+    top: 13px;
+    text-align: center;
+}
+
+#mobile-top-text {
+    width: var(--mobile-screen-width);
+    top: 2px;
+    font-size: 0.75em;
+}
+
+#mobile-channel-text {
+    bottom: 17px;
+    font-weight: bold;
+    width: var(--mobile-screen-width);
+    text-align: center;
+    overflow-wrap: break-word;
+    font-size: var(--main-channel-text);
+}
+
+#mobile-vertical-list {
+    width: var(--mobile-screen-width);
+    background-color: gainsboro;
+    bottom: 1px;
+    display: none;
+}
+
+#mobile-vertical-list .vertical-list-item {
+    height: 9px !important;
+    font-size: 0.8em;
+}
+
+#mobile-range-text {
+    display: none;
+    bottom: 38px;
+    font-weight: bolder;
+    width: var(--mobile-screen-width);
+    background-color: darkred;
+    color: white;
+    text-align: center;
+    padding: 1px;
+}
+
+#mobile-lower-text {
+    text-align: center;
+    width: var(--mobile-screen-width);
+    bottom: 0px;
+}
+
+#mobile-menu-row {
+    bottom: -12px;
+    width: var(--mobile-screen-width);
+    height: 11px;
+    font-size: 0.85em;
+    color: white;
+}
+
+.mobile-btm-text {
+    position: absolute;
+    bottom: 0px;
+    width: 43px;
+    height: 11px;
+    text-align: center;
+}
+
+#mobile-btm-text-1 {
+    left: 0px;
+}
+
+#mobile-btm-text-2 {
+    left: 42px;
+}
+
+#mobile-btm-text-3 {
+    left: 87px;
+}
+
+#mobile-btm-text-4 {
+    left: 130px;
+}
+
+#mobile-btm-text-5 {
+    left: 175px;
+}
+
+#mobile-p-btn {
+    left: 81px;
+    bottom: 10px;
+    width: 28px;
+    height: 26px;
+}
+
+#mobile-soft-btn-1 {
+    bottom: var(--mobile-btn-row-bottom);
+    width: var(--mobile-btn-width);
+    left: 120px;
+}
+
+#mobile-soft-btn-2 {
+    bottom: var(--mobile-btn-row-bottom);
+    width: var(--mobile-btn-width);
+    left: 167px;
+}
+
+#mobile-soft-btn-3 {
+    bottom: var(--mobile-btn-row-bottom);
+    width: var(--mobile-btn-width);
+    left: 215px;
+}
+
+#mobile-soft-btn-4 {
+    bottom: var(--mobile-btn-row-bottom);
+    width: var(--mobile-btn-width);
+    left: 263px;
+}
+
+#mobile-soft-btn-5 {
+    bottom: var(--mobile-btn-row-bottom);
+    width: var(--mobile-btn-width);
+    left: 311px;
+}
+
+#mobile-btn-up {
+    left: 389px;
+    bottom: 44px;
+    width: 20px;
+    height: 15px;
+}
+
+#mobile-btn-down {
+    left: 389px;
+    bottom: 10px;
+    width: 20px;
+    height: 15px;
+}
+
+#mobile-btn-left {
+    left: 372px;
+    bottom: 25px;
+    width: 15px;
+    height: 20px;
+}
+
+#mobile-btn-right {
+    left: 410px;
+    bottom: 25px;
+    width: 15px;
+    height: 20px;
+}
+
+#mobile-home-btn {
+    left: 436px;
+    bottom: 12px;
+    width: 24px;
+    height: 23px;
+}

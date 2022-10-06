@@ -1,0 +1,197 @@
+#tooltip {
+    z-index: 99;
+    background-color: grey;
+    color: white;
+    padding: 1px 5px;
+    position: absolute;
+    display: none;
+    width: 5%;
+}
+
+.debug {
+    border: 1px solid red;
+}
+
+.reverse {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+
+:root {
+    font-size: 0.8em;
+    --main-channel-text: 1em;
+    --soft-btn-height: 20px;
+    /* Portable Front */
+    --portable-front-screen-width: 101px;
+    --portable-top-btn-row: 99px;
+    --portable-btm-btn-row: 8px;
+    --portable-soft-btn-width: 34px;
+    /* Mobile */
+    --mobile-screen-width: 218px;
+    --mobile-screen-height: 44px;
+    --mobile-btn-row-bottom: 6px;
+    --mobile-btn-width: 41px;
+}
+
+@font-face {
+    font-family: 'motorola';
+    src: url('../fonts/motorola.ttf') format('truetype'),
+        url('../fonts/motorola-webfont.woff2') format('woff2'),
+        url('../fonts/motorola-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Generics */
+.absolute {
+    position: absolute;
+}
+
+.always-on {
+    display: block !important;
+}
+
+.backlight {
+    background-color: rgba(0, 255, 255, 0.5);
+}
+
+.radio-display {
+    display: none;
+}
+
+.statusBar {
+    background-color: green;
+    position: absolute;
+    width: 2px;
+}
+
+.scanning {
+    top: 1px;
+    display: none;
+    font-size: 0.8em;
+    transform: scale(3, 1);
+}
+
+.talk-around {
+    display: none;
+}
+
+.tower {
+    position: absolute;
+    left: 3px;
+    top: 0px;
+}
+
+#rssi-bar-1 {
+    bottom: 0px;
+    left: 0px;
+    height: 25%;
+}
+
+#rssi-bar-2 {
+    bottom: 0px;
+    left: 3px;
+    height: 50%;
+}
+
+#rssi-bar-3 {
+    bottom: 0px;
+    left: 6px;
+    height: 75%;
+}
+
+#rssi-bar-4 {
+    bottom: 0px;
+    left: 9px;
+    height: 100%;
+}
+
+.send-data {
+    display: none;
+}
+
+.receive-data {
+    display: none;
+}
+
+.gps {
+    display: none;
+}
+
+.page {
+    display: none;
+}
+
+.softBtn {
+    position: absolute;
+    height: var(--soft-btn-height);
+}
+
+.no-link {
+    position: absolute;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+
+.vertical-list-item {
+    height: 12px;
+    background-color: lightgray;
+    padding: 2px;
+    border-top: 1px solid slategray;
+}
+
+.vertical-list-selected-item {
+    background-color: gray !important;
+}
+
+/* Connection Stuff */
+#connectionBox {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    top: 0px;
+    left: 0px;
+    z-index: 99;
+}
+
+#connectionInner {
+    width: 300px;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    text-shadow: 1px 1px black;
+    color: #eeeeee;
+    top: 50%;
+    transform: translateY(-51%);
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#connectionInner h1 {
+    color: yellow;
+    text-align: center;
+}
+
+#connectionInner .scriptName {
+    color: red;
+    font-weight: bolder;
+}
+
+#connectionInner .blue {
+    color: lightseagreen;
+    font-weight: bolder;
+}
+
+#connectionInner .green {
+    color: green;
+    font-weight: bolder;
+}

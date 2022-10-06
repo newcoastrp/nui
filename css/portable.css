@@ -1,0 +1,417 @@
+#portable-radio {
+    display: none;
+    top: 378px;
+    left: 320px;
+    max-height: max-content;
+    max-width: max-content;
+    font-family: 'motorola' !important;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    letter-spacing: 0.1em;
+}
+
+/* Portable front */
+#portable-front-nolink {
+    left: 67px;
+    width: var(--portable-front-screen-width);
+    top: 458px;
+    height: 103px;
+    line-height: 103px;
+}
+
+#portable-front-channel-down-knob {
+    left: 90px;
+    bottom: 337px;
+    width: 25px;
+    height: 60px;
+}
+
+#portable-front-channel-up-knob {
+    left: 118px;
+    bottom: 337px;
+    width: 25px;
+    height: 60px;
+}
+
+#portable-front-volume-down-knob {
+    left: 180px;
+    bottom: 330px;
+    width: 30px;
+    height: 45px;
+}
+
+#portable-front-volume-up-knob {
+    left: 213px;
+    bottom: 330px;
+    width: 30px;
+    height: 45px;
+}
+
+#portable-front-radio-display {
+    left: 67px;
+    top: 458px;
+    height: 103px;
+    width: 101px;
+    border-radius: 3px;
+}
+
+#portable-front-status-text {
+    top: 2px;
+    width: var(--portable-front-screen-width);
+    font-size: 0.8em;
+    letter-spacing: normal !important;
+}
+
+#portable-front-time {
+    left: 2px;
+    top: 15px;
+}
+
+#portable-front-send-data {
+    left: 8px;
+}
+
+#portable-front-receive-data {
+    left: 12px;
+}
+
+#portable-front-rssi-group {
+    bottom: -12px;
+    left: 10px;
+    height: 12px;
+}
+
+#portable-front-monitor {
+    top: 0px;
+    left: 22px;
+}
+
+#portable-front-operation {
+    left: 32px;
+}
+
+#portable-front-scanning {
+    left: 48px;
+}
+
+#portable-front-talk-around {
+    left: 55px;
+}
+
+#portable-front-gps {
+    left: 75px;
+}
+
+/* Battery */
+#battery {
+    left: 87px;
+    top: 1px;
+    transform: rotate(-90deg);
+}
+
+.batteryBar {
+    width: 6px;
+    height: 2px;
+    left: 92px;
+}
+
+#batteryBar1 {
+    top: 1px;
+}
+
+#batteryBar2 {
+    top: 4px;
+}
+
+#batteryBar3 {
+    top: 7px;
+}
+
+#batteryBar4 {
+    top: 10px;
+}
+
+#portable-front-top-text {
+    top: 29px;
+    width: var(--portable-front-screen-width);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: xx-small;
+}
+
+#portable-front-channel-text {
+    top: 41px;
+    width: var(--portable-front-screen-width);
+    text-align: center;
+    overflow-wrap: break-word;
+    font-size: 1.1em;
+}
+
+#portable-front-vertical-list {
+    width: var(--portable-front-screen-width);
+    background-color: gainsboro;
+    bottom: 19px;
+    display: none;
+}
+
+#portable-front-range-text {
+    display: none;
+    bottom: 20px;
+    font-weight: bolder;
+    width: var(--portable-front-screen-width);
+    background-color: darkred;
+    color: white;
+    text-align: center;
+    padding: 1px;
+}
+
+#portable-front-lower-text {
+    text-align: center;
+    width: var(--portable-front-screen-width);
+    bottom: 17px;
+}
+
+#portable-menu-row {
+    background-color: rgba(25, 85, 105, 0.25);
+    width: var(--portable-front-screen-width);
+    height: 17px;
+    bottom: 0px;
+}
+
+.portable-btm-text {
+    position: absolute;
+    bottom: 0px;
+    width: var(--portable-soft-btn-width);
+    overflow-wrap: break-word;
+}
+
+#portable-btm-text-1 {
+    left: 3px;
+    text-align: left;
+}
+
+#portable-btm-text-2 {
+    left: 33px;
+    text-align: center;
+}
+
+#portable-btm-text-3 {
+    right: 1px;
+    text-align: right;
+}
+
+#portable-soft-btn-1 {
+    bottom: var(--portable-top-btn-row);
+    left: 64px;
+    width: var(--portable-soft-btn-width);
+}
+
+#portable-soft-btn-2 {
+    bottom: var(--portable-top-btn-row);
+    left: 102px;
+    width: var(--portable-soft-btn-width);
+}
+
+#portable-soft-btn-3 {
+    bottom: var(--portable-top-btn-row);
+    left: 140px;
+    width: var(--portable-soft-btn-width);
+}
+
+#portable-home-btn {
+    left: 58px;
+    top: 610px;
+    width: 25px;
+    height: 47px;
+}
+
+#portable-soft-btn-up {
+    left: 110px;
+    top: 610px;
+    width: 20px;
+    height: 20px;
+}
+
+#portable-soft-btn-down {
+    left: 110px;
+    top: 640px;
+    width: 20px;
+    height: 20px;
+}
+
+#portable-soft-btn-left {
+    left: 87px;
+    top: 624px;
+    width: 20px;
+    height: 20px;
+}
+
+#portable-soft-btn-right {
+    left: 132px;
+    top: 624px;
+    width: 20px;
+    height: 20px;
+}
+
+#portable-other-btn {
+    left: 155px;
+    top: 610px;
+    width: 25px;
+    height: 47px;
+}
+
+#portable-extra-btn-1 {
+    left: 202px;
+    top: 631px;
+    width: 15px;
+    height: 25px;
+}
+
+#portable-extra-btn-2 {
+    left: 202px;
+    top: 659px;
+    width: 15px;
+    height: 25px;
+}
+
+#portable-no-btns {
+    left: 58px;
+    top: 664px;
+    width: 122px;
+    height: 35px;
+}
+
+/*
+****************************
+****************************
+****************************
+****************************
+****************************
+****************************
+****************************
+
+
+       Top Display
+
+
+****************************
+****************************
+****************************
+****************************
+****************************
+****************************
+****************************
+****************************
+*/
+
+#portable-top-ui {
+    left: 280px;
+    bottom: -702px;
+}
+
+#portable-top-nolink {
+    line-height: 32px;
+    left: 97px;
+    top: 29px;
+    width: 93px;
+    height: 32px;
+}
+
+#portable-panicBtn {
+    left: 75px;
+    bottom: 28px;
+    width: 32px;
+    height: 32px;
+}
+
+#portable-top-channel-down-knob {
+    left: 118px;
+    bottom: 15px;
+    width: 25px;
+    height: 50px;
+}
+
+#portable-top-channel-up-knob {
+    left: 145px;
+    bottom: 15px;
+    width: 25px;
+    height: 50px;
+}
+
+#portable-top-volume-down-knob {
+    left: 211px;
+    bottom: 45px;
+    width: 37px;
+    height: 65px;
+}
+
+#portable-top-volume-up-knob {
+    left: 250px;
+    bottom: 45px;
+    width: 30px;
+    height: 65px;
+}
+
+#portable-top-radio-display {
+    left: 97px;
+    top: 29px;
+    width: 93px;
+    height: 31px;
+    border-radius: 5px;
+}
+
+#portable-top-status-text {
+    top: 2px;
+    width: 100%;
+}
+
+#portable-top-monitor {
+    font-size: 1.25em;
+    top: -6px;
+    left: 3px;
+}
+
+#portable-top-talk-around {
+    left: 50px;
+    top: 0px;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: 900;
+    font-size: 0.8em;
+}
+
+#portable-top-scanning {
+    left: 64px;
+}
+
+#portable-top-channel-text {
+    bottom: 0px;
+    font-weight: bolder;
+    width: 135px;
+    overflow-wrap: break-word;
+    margin-left: 5px;
+}
+
+#portable-top-range-text {
+    display: none;
+    bottom: -2px;
+    font-weight: bolder;
+    width: 92px;
+    background-color: darkred;
+    color: white;
+    text-align: center;
+    padding: 1px;
+}
+
+#portable-led {
+    border-radius: 100%;
+    position: absolute;
+    left: 107px;
+    top: 91px;
+    width: 7px;
+    height: 7px;
+    background-color: orange;
+    display: none;
+}

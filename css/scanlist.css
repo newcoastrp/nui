@@ -1,0 +1,123 @@
+#scan-lists-dialog {
+    width: 50%;
+    height: 50%;
+    background-color: grey;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: none;
+}
+
+#scan-lists-save {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    width: max-content;
+    border-radius: 10%;
+    bottom: 5px;
+    right: 150px;
+}
+
+#scan-lists-cancel {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    width: max-content;
+    border-radius: 10%;
+    bottom: 5px;
+    right: 20px;
+}
+
+#scan-list-new {
+    background-color: green;
+    color: white;
+    width: max-content;
+    padding: 5px;
+    border-radius: 15%;
+    margin-left: 1%;
+}
+
+#scan-lists-table table {
+    text-align: unset !important;
+    width: 100%;
+}
+
+#scan-lists-table table tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+.scan-list-delete {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 5%;
+}
+
+.scan-list-load {
+    background-color: green;
+    color: white;
+    padding: 5px;
+    border-radius: 5%;
+}
+
+.scan-list-edit {
+    background-color: orange;
+    color: white;
+    padding: 5px;
+    border-radius: 5%;
+}
+
+#scan-list-modal {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: 40%;
+    padding: 10px;
+    z-index: 80;
+    background-color: lightgray;
+    text-align: center;
+    display: none;
+}
+
+#scan-list-modal table {
+    height: 100%;
+}
+
+#scan-list-modal table thead {
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+#scan-list-name {
+    width: 200px;
+    top: -15vh;
+    position: relative;
+}
+
+#scan-list-talkgroups {
+    height: 25vh;
+    top: -5vh;
+    position: relative;
+}
+
+#scan-list-save {
+    background-color: green;
+    color: white;
+    width: max-content;
+    padding: 5px;
+    left: 50px;
+    bottom: 10px;
+}
+
+#scan-list-cancel {
+    background-color: red;
+    color: white;
+    width: max-content;
+    padding: 5px;
+    right: 50px;
+    bottom: 10px;
+}

@@ -1,0 +1,358 @@
+<!DOCTYPE html><html><head>
+        <title>San Andreas Emergency Communication Networks</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+        <meta name="robots" content="noindex, nofollow">
+        <link rel="stylesheet" href="css/radio.css" type="text/css">
+        <link rel="stylesheet" href="css/portable.css" type="text/css">
+        <link rel="stylesheet" href="css/car.css" type="text/css">
+        <link rel="stylesheet" href="css/persistent.css" type="text/css">
+        <link rel="stylesheet" href="css/thmg.css" type="text/css">
+        <link rel="stylesheet" href="css/scanlist.css" type="text/css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/dev.js"></script>
+        <script src="js/app.js" defer></script>
+        <script src="js/radio.js" defer></script>
+    </head>
+
+    <body>
+        <div id="tooltip"></div>
+        <div class="absolute" id="connectionBox">
+            <div id="connectionInner">
+                <h1>SSan Andreas Emergency Communication Networks</h1>
+                <p>
+                    <span class="scriptName">San Andreas Emergency Communication Networks</span> is
+                    our Motorola Radio emulator, using a custom made TS3 plugin.
+                </p>
+                <p>
+                    It gives us a lot more
+                    <span class="green">possibilities</span>, which currently
+                    allow such things as:
+                </p>
+                <ul>
+                    <li>Digital trunked radio system</li>
+                    <li>Scanning channels</li>
+                    <li>Radio clicks</li>
+                    <li>Talk enforcement</li>
+                    <li>Emergency buttons</li>
+                    <li>911 calls</li>
+                </ul>
+                <p>
+                    <span class="scriptName">San Andreas EC Networks</span>
+                    must be <span class="blue">installed</span> and
+                    <span class="blue">running</span> to play on our servers.
+                </p>
+                <br>
+                <p>
+                    Plugin status:
+                    <span id="pluginStatus" class="scriptName">Not Connected</span>
+                    <br>
+                    Version: <span id="pluginVersion" class="scriptName"></span>
+                </p>
+            </div>
+        </div>
+
+        <div id="radio">
+            <section class="absolute" id="portable-radio">
+                <!-- Portable Radio Front -->
+                <div class="absolute" id="portable-front-ui">
+                    <img id="front-img" src="images/radio_front.png" width="239" height="700" alt="Motorola APX8000 Portable Radio Face">
+                    <div class="no-link" id="portable-front-nolink">
+                        no link
+                    </div>
+
+                    <div class="channel-down absolute" id="portable-front-channel-down-knob"></div>
+                    <div class="channel-up absolute" id="portable-front-channel-up-knob"></div>
+                    <div class="volume-down absolute" id="portable-front-volume-down-knob"></div>
+                    <div class="volume-up absolute" id="portable-front-volume-up-knob"></div>
+
+                    <div class="radio-display portable-radio-display absolute" id="portable-front-radio-display">
+                        <div class="absolute" id="portable-front-status-text">
+                            <div class="zulu-time absolute" id="portable-front-time">
+                                88:88z
+                            </div>
+                            <!-- Tower -->
+                            <img class="tower tower-info" src="images/tower.png" width="10" height="12" alt="Radio Tower Icon">
+                            <img src="images/send.png" class="absolute send-data data-icons" id="portable-front-send-data" width="15" height="15">
+                            <img src="images/receive.png" class="absolute receive-data data-icons" id="portable-front-receive-data" width="10" height="10">
+
+                            <div class="rssi-group absolute" id="portable-front-rssi-group">
+                                <div class="rssi-bar portable-rssi-bar statusBar" id="rssi-bar-1"></div>
+                                <div class="rssi-bar portable-rssi-bar statusBar" id="rssi-bar-2"></div>
+                                <div class="rssi-bar portable-rssi-bar statusBar" id="rssi-bar-3"></div>
+                                <div class="rssi-bar portable-rssi-bar statusBar" id="rssi-bar-4"></div>
+                            </div>
+
+                            <div class="reverse absolute" id="portable-front-monitor">
+                                🔈
+                            </div>
+                            <img src="images/ops.png" class="absolute operation" id="portable-front-operation" width="12" height="12">
+                            <img src="images/scan.png" class="scanning absolute" id="portable-front-scanning" width="3" height="12">
+                            <img src="images/direct.png" class="absolute talk-around" id="portable-front-talk-around" width="12" height="12">
+                            <img src="images/gps.png" class="gps absolute" id="portable-front-gps" width="10" height="12">
+                            <img src="images/battery.png" width="16px" height="10px" id="battery" class="absolute">
+                            <div class="statusBar batteryBar" id="batteryBar1"></div>
+                            <div class="statusBar batteryBar" id="batteryBar2"></div>
+                            <div class="statusBar batteryBar" id="batteryBar3"></div>
+                            <div class="statusBar batteryBar" id="batteryBar4"></div>
+                        </div>
+
+                        <div class="top-text absolute" id="portable-front-top-text"></div>
+                        <div class="channel-text free-text absolute" id="portable-front-channel-text"></div>
+
+                        <section class="vertical-list absolute" id="portable-front-vertical-list" data-pos="1" data-cursor="1"></section>
+
+                        <div class="lower-text absolute" id="portable-front-lower-text">
+                            EA received: 888 DATA
+                        </div>
+
+                        <div class="btmText absolute" id="portable-menu-row">
+                            <div id="portable-btm-text-1" class="portable-btm-text btm-text-1"></div>
+                            <div id="portable-btm-text-2" class="portable-btm-text btm-text-2"></div>
+                            <div id="portable-btm-text-3" class="portable-btm-text btm-text-3"></div>
+                        </div>
+                    </div>
+
+                    <div class="softBtn soft-btn-1" id="portable-soft-btn-1"></div>
+                    <div class="softBtn soft-btn-2" id="portable-soft-btn-2"></div>
+                    <div class="softBtn soft-btn-3" id="portable-soft-btn-3"></div>
+
+                    <div class="home-btn absolute" id="portable-home-btn"></div>
+                    <div class="softBtn soft-btn-up" id="portable-soft-btn-up"></div>
+                    <div class="softBtn soft-btn-down" id="portable-soft-btn-down"></div>
+                    <div class="softBtn soft-btn-left" id="portable-soft-btn-left"></div>
+                    <div class="softBtn soft-btn-right" id="portable-soft-btn-right"></div>
+                    <div class="absolute" id="portable-other-btn"></div>
+
+                    <div class="absolute" id="portable-extra-btn-1"></div>
+                    <div class="absolute" id="portable-extra-btn-2"></div>
+
+                    <div class="absolute" id="portable-no-btns"></div>
+                </div>
+
+                <div class="absolute" id="portable-top-ui">
+                    <!-- Portable Radio Top -->
+                    <img id="top-img" src="images/radio_top.png" width="276" height="138" alt="Motorola APX8000 Portable Radio Top">
+                    <div class="no-link" id="portable-top-nolink">no link</div>
+
+                    <div class="panic-btn absolute" id="portable-panicBtn"></div>
+                    <div class="channel-down absolute" id="portable-top-channel-down-knob"></div>
+                    <div class="channel-up absolute" id="portable-top-channel-up-knob"></div>
+                    <div class="volume-down absolute" id="portable-top-volume-down-knob"></div>
+
+                    <div class="volume-up absolute" id="portable-top-volume-up-knob"></div>
+
+                    <div class="radio-display portable-radio-display absolute" id="portable-top-radio-display">
+                        <div class="absolute" id="portable-top-status-text">
+                            <div class="absolute" id="portable-top-monitor">
+                                🕨
+                            </div>
+                            <img src="images/direct.png" class="talk-around absolute" id="portable-top-talk-around" width="10" height="10">
+                            <img src="images/scan.png" class="scanning absolute" id="portable-top-scanning" width="2" height="10">
+                        </div>
+                        <div class="channel-text absolute" id="portable-top-channel-text"></div>
+                        <div class="out-of-range absolute" id="portable-top-range-text">
+                            Out of range
+                        </div>
+                    </div>
+                    <div id="portable-led" class="green-led red-led yellow-led"></div>
+                </div>
+            </section>
+
+            <section class="absolute" id="mobile-radio">
+                <!-- Mobile Radio (Car) -->
+                <div class="absolute" id="mobile-ui">
+                    <img id="mobile-img" src="images/car_radio.png" width="473" height="132" alt="Motorola APX8500 E5 Mobile Radio Control Head">
+                    <div class="no-link" id="mobile-nolink">no link</div>
+
+                    <div class="volume-down absolute" id="mobile-volume-down-knob"></div>
+                    <div class="volume-up absolute" id="mobile-volume-up-knob"></div>
+
+                    <div class="channel-down absolute" id="mobile-channel-down-knob"></div>
+                    <div class="channel-up absolute" id="mobile-channel-up-knob"></div>
+                    <div class="panic-btn absolute" id="mobile-panicBtn"></div>
+
+                    <div class="backlight-btn absolute" id="mobile-backlight-btn"></div>
+                    <div class="home-btn absolute" id="mobile-home-btn"></div>
+                    <div class="power-btn absolute" id="mobile-power-btn"></div>
+
+                    <div class="absolute transmit red-led" id="mobile-red-led"></div>
+                    <div class="absolute receive yellow-led" id="mobile-yellow-led"></div>
+                    <div class="absolute free-led green-led" id="mobile-green-led"></div>
+
+                    <div class="radio-display absolute mobile-radio-display" id="mobile-radio-display">
+                        <div id="mobile-status-text">
+                            <img class="tower tower-info invertable" src="images/tower.png" width="10" height="12" alt="Radio Tower Icon">
+                            <img src="images/send.png" class="absolute send-data data-icons" id="mobile-send-data" width="20" height="15">
+                            <img src="images/receive.png" class="absolute receive-data data-icons" id="mobile-receive-data" width="15" height="15">
+
+                            <div class="rssi-group absolute" id="mobile-rssi-group">
+                                <div class="rssi-bar mobile-rssi-bar statusBar" id="rssi-bar-1"></div>
+                                <div class="rssi-bar mobile-rssi-bar statusBar" id="rssi-bar-2"></div>
+                                <div class="rssi-bar mobile-rssi-bar statusBar" id="rssi-bar-3"></div>
+                                <div class="rssi-bar mobile-rssi-bar statusBar" id="rssi-bar-4"></div>
+                            </div>
+
+                            <div class="absolute" id="mobile-monitor">🕨</div>
+                            <img src="images/ops.png" class="absolute operation invertable" id="mobile-operation" width="14" height="14">
+                            <img src="images/direct.png" class="absolute talk-around invertable" id="mobile-talk-around" width="20" height="14">
+                            <img src="images/scan.png" class="scanning absolute invertable" id="mobile-scanning" width="5" height="12">
+                            <img src="images/gps.png" class="gps absolute invertable" id="mobile-gps" width="15" height="14">
+                            <div class="zulu-time absolute" id="mobile-time">
+                                88:88z
+                            </div>
+                        </div>
+
+                        <div id="mobile-main-text" class="absolute main-text">
+                            <div class="top-text absolute" id="mobile-top-text"></div>
+                            <div class="channel-text free-text absolute" id="mobile-channel-text"></div>
+
+                            <section class="vertical-list absolute" id="mobile-vertical-list" data-pos="1" data-cursor="1"></section>
+
+                            <div class="lower-text absolute" id="mobile-lower-text">
+                                EA received 888 SPARTAN
+                            </div>
+                        </div>
+                        <div class="btmText absolute" id="mobile-menu-row">
+                            <div id="mobile-btm-text-1" class="mobile-btm-text btm-text-1"></div>
+                            <div id="mobile-btm-text-2" class="mobile-btm-text btm-text-2"></div>
+                            <div id="mobile-btm-text-3" class="mobile-btm-text btm-text-3"></div>
+                            <div id="mobile-btm-text-4" class="mobile-btm-text btm-text-4"></div>
+                            <div id="mobile-btm-text-5" class="mobile-btm-text btm-text-5"></div>
+                        </div>
+                    </div>
+                    <div id="mobile-p-btn" class="absolute"></div>
+                    <div class="softBtn soft-btn-1" id="mobile-soft-btn-1"></div>
+                    <div class="softBtn soft-btn-2" id="mobile-soft-btn-2"></div>
+                    <div class="softBtn soft-btn-3" id="mobile-soft-btn-3"></div>
+                    <div class="softBtn soft-btn-4" id="mobile-soft-btn-4"></div>
+                    <div class="softBtn soft-btn-5" id="mobile-soft-btn-5"></div>
+
+                    <div class="softBtn soft-btn-up" id="mobile-btn-up"></div>
+                    <div class="softBtn soft-btn-down" id="mobile-btn-down"></div>
+                    <div class="softBtn soft-btn-left" id="mobile-btn-left"></div>
+                    <div class="softBtn soft-btn-right" id="mobile-btn-right"></div>
+                </div>
+            </section>
+
+            <section class="absolute" id="persistent-radio">
+                <!-- Persistent Radio (Car) -->
+                <div class="absolute" id="persistent-ui">
+                    <img id="persistent-img" src="images/persistent.png" width="473" height="132" alt="Motorola APX8500 E5 Mobile Radio Control Head">
+                    <div class="no-link" id="persistent-nolink">no link</div>
+
+                    <div class="absolute transmit red-led" id="persistent-red-led"></div>
+                    <div class="absolute receive yellow-led" id="persistent-yellow-led"></div>
+                    <div class="absolute free-led green-led" id="persistent-green-led"></div>
+
+                    <div class="radio-display absolute mobile-radio-display" id="persistent-radio-display">
+                        <div id="persistent-status-text">
+                            <img class="tower tower-info invertable" src="images/tower.png" width="10" height="12" alt="Radio Tower Icon">
+                            <img src="images/send.png" class="absolute send-data data-icons" id="persistent-send-data" width="20" height="15">
+                            <img src="images/receive.png" class="absolute receive-data data-icons" id="persistent-receive-data" width="15" height="15">
+
+                            <div class="rssi-group absolute" id="persistent-rssi-group">
+                                <div class="
+                                        rssi-bar
+                                        persistent-rssi-bar
+                                        statusBar
+                                    " id="rssi-bar-1"></div>
+                                <div class="
+                                        rssi-bar
+                                        persistent-rssi-bar
+                                        statusBar
+                                    " id="rssi-bar-2"></div>
+                                <div class="
+                                        rssi-bar
+                                        persistent-rssi-bar
+                                        statusBar
+                                    " id="rssi-bar-3"></div>
+                                <div class="
+                                        rssi-bar
+                                        persistent-rssi-bar
+                                        statusBar
+                                    " id="rssi-bar-4"></div>
+                            </div>
+
+                            <div class="absolute" id="persistent-monitor">
+                                🕨
+                            </div>
+                            <img src="images/ops.png" class="absolute operation invertable" id="persistent-operation" width="14" height="14">
+                            <img src="images/direct.png" class="absolute talk-around invertable" id="persistent-talk-around" width="20" height="14">
+                            <img src="images/scan.png" class="scanning absolute invertable" id="persistent-scanning" width="5" height="12">
+                            <img src="images/gps.png" class="gps absolute invertable" id="persistent-gps" width="15" height="14">
+                            <div class="zulu-time absolute" id="persistent-time">
+                                88:88z
+                            </div>
+                        </div>
+
+                        <div id="persistent-main-text" class="absolute main-text">
+                            <div class="top-text absolute" id="persistent-top-text"></div>
+                            <div class="channel-text free-text absolute" id="persistent-channel-text"></div>
+
+                            <section class="vertical-list absolute" id="persistent-vertical-list" data-pos="1" data-cursor="1"></section>
+
+                            <div class="lower-text absolute" id="persistent-lower-text">
+                                EA received 888 SPARTAN
+                            </div>
+                        </div>
+                        <div class="btmText absolute" id="persistent-menu-row">
+                            <div id="persistent-btm-text-1" class="persistent-btm-text btm-text-1"></div>
+                            <div id="persistent-btm-text-2" class="persistent-btm-text btm-text-2"></div>
+                            <div id="persistent-btm-text-3" class="persistent-btm-text btm-text-3"></div>
+                            <div id="persistent-btm-text-4" class="persistent-btm-text btm-text-4"></div>
+                            <div id="persistent-btm-text-5" class="persistent-btm-text btm-text-5"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="thmgBlock"></div>
+
+        <div id="scan-list-section">
+            <div id="scan-lists-dialog" class="absolute">
+                <h2>Saved Scan Lists</h2>
+                <hr>
+                <div id="scan-lists-table">
+                    <table>
+                        <thead>
+                            <tr><td>Scan List Name</td>
+                            <td>Scanned Talkgroups</td>
+                        </tr></thead>
+                    </table>
+                </div>
+                <div id="scan-list-new" class="absolute">+ Create New</div>
+                <div id="scan-lists-save" class="absolute">Save & Close</div>
+                <div id="scan-lists-cancel" class="absolute">
+                    Discard & Close
+                </div>
+            </div>
+
+            <div id="scan-list-modal" class="absolute">
+                <h2>Create/Edit Scan List</h2>
+                <hr>
+                <table>
+                    <thead>
+                        <tr><td>Scan List Name</td>
+                        <td>Scanned Talkgroups</td>
+                    </tr></thead>
+                    <tbody><tr>
+                        <td>
+                            <input type="text" name="scanListName" id="scan-list-name">
+                        </td>
+                        <td>
+                            <select name="scanListTalkgroups" id="scan-list-talkgroups" multiple></select>
+                        </td>
+                    </tr>
+                </tbody></table>
+                <div id="scan-list-save" class="absolute">Save & Close</div>
+                <div id="scan-list-cancel" class="absolute">
+                    Discard & Close
+                </div>
+            </div>
+        </div>
+    
+
+</body></html>
