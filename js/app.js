@@ -72,6 +72,7 @@ var websocket, wsConnected = !1,
     heartbeatInterval = null,
     longHaul = null,
     radio = {
+        TeamspeakID: tsUUID,
         radioEnabled: !1,
         radioConnected: !0,
         isSending: !1,
