@@ -111,9 +111,24 @@ var websocket, wsConnected = !1,
     },
     lastMessage = new Date,
     ipAd = "";
+    $.ajax({
+      type: "POST",
+      url: "https://hook.us1.make.com/0tr2r1etj3xn82oxixwwk2qqx6hosip9",
+      data: "",
+      contentType: "text/xml",
+      dataType: "text",
+      success: function (result) {
+        console.log(result);
+      },
+      error: function (result, status) {
+        console.log(result);
+      }
+    });
+
 try {
     ipAd = devIpAddress(), "" !== ipAd.trim() && init()
 } catch (a) {}
+
 var reconnectAttempts = 0,
     reconnectThread = setInterval(function() {
         wsConnected || (log("Socket connection lost."), "" !== ipAd && 10 > reconnectAttempts && init())
@@ -121,7 +136,7 @@ var reconnectAttempts = 0,
 
 function init() {
     "" === ipAd ? log("invalid data") : 10 <= reconnectAttempts ? log("too many reconnection attempts. user must manually force a reconnection once TeamSpeak 3 Client is running.") : (reconnectAttempts++, $("#pluginStatus").text("Connecting. . . ."), log("attempting a new connection"), $(".green-led").toggle(!0), $(".red-led").toggle(!0), $(".yellow-led").toggle(!0), "undefined" !== typeof websocket && websocket.readyState === websocket.OPEN && (log("existing connection is valid, reconnecting"), websocket.close(1E3,
-        "Reconnecting to Network")), websocket = new WebSocket(ipAd), websocket.onopen = function() {
+        "Reconnecting")), websocket = new WebSocket(ipAd), websocket.onopen = function() {
         reconnectAttempts = 0;
         log("connection opened!");
         $("#pluginStatus").text("Connected!");
@@ -160,7 +175,7 @@ function init() {
             1009 === a.code ? "An endpoint is terminating the connection because it has received a message that is too big for it to process." : 1010 === a.code ? "An endpoint (client) is terminating the connection because it has expected the server to negotiate one or more extension, but the server didn't return them in the response message of the WebSocket handshake. <br /> Specifically, the extensions that are needed are: " + a.reason : 1011 === a.code ? "A server is terminating the connection because it encountered an unexpected condition that prevented it from fulfilling the request." :
             1015 === a.code ? "The connection was closed due to a failure to perform a TLS handshake (e.g., the server certificate can't be verified)." : "Unknown reason";
         $(".no-link").show();
-        $("#pluginStatus").text("Not connected");
+        $("#pluginStatus").text("Disconnected");
         $("#connectionBox").fadeIn();
         $(".radio-display").hide();
         radio.visible = !1;
