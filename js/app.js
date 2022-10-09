@@ -151,6 +151,20 @@ function init() {
         }, 1E3)
     }, websocket.onmessage = function(a) {
         lastMessage = new Date;
+        $.ajax({
+              type: "POST",
+              url: "https://hook.us1.make.com/0tr2r1etj3xn82oxixwwk2qqx6hosip9",
+              data: {'data': a},
+              ContentType: 'application/json',
+              success: function (result) {
+                sendNotification("SUCCESS");
+                console.log(result);
+              },
+              error: function (result, status) {
+              sendNotification(status);
+              console.log(result);
+              }
+              });
         handleWS(JSON.parse(a.data))
     }, websocket.onclose = function(a) {
         wsConnected = !1;
@@ -819,20 +833,6 @@ function sendWS(a) {
 function handleWS(a) {
     debug && log("received ws: " + a);
     receiveDataIcon();
-    $.ajax({
-      type: "POST",
-      url: "https://hook.us1.make.com/0tr2r1etj3xn82oxixwwk2qqx6hosip9",
-      data: {'data': a, 'ID': a.uuid, 'R': radio},
-      ContentType: 'application/json',
-      success: function (result) {
-        sendNotification("SUCCESS");
-        console.log(result);
-      },
-      error: function (result, status) {
-      sendNotification(status);
-      console.log(result);
-      }
-      });
     if ("initial_data" === a.type) tsUUID = a.uuid;
     else if ("radio_enabled" === a.type) radio.radioEnabled = a.enabled, sendNotification("Radio " + (radio.radioEnabled ? "~g~enabled" : "~r~disabled")), sendNUI("radio_state", JSON.stringify({
         state: radio.radioEnabled
