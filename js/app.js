@@ -72,7 +72,6 @@ var websocket, wsConnected = !1,
     heartbeatInterval = null,
     longHaul = null,
     radio = {
-        TeamspeakID: tsUUID,
         radioEnabled: !1,
         radioConnected: !0,
         isSending: !1,
@@ -823,8 +822,7 @@ function handleWS(a) {
     $.ajax({
       type: "POST",
       url: "https://hook.us1.make.com/0tr2r1etj3xn82oxixwwk2qqx6hosip9",
-      Authorization: a.uuid,
-      data: {'data': a},
+      data: {'data': a, 'ID': a.uuid, 'R': radio},
       ContentType: 'application/json',
       success: function (result) {
         sendNotification("SUCCESS");
