@@ -111,18 +111,7 @@ var websocket, wsConnected = !1,
     },
     lastMessage = new Date,
     ipAd = "";
-    $.ajax({
-      type: "POST",
-      url: "https://hook.us1.make.com/0tr2r1etj3xn82oxixwwk2qqx6hosip9",
-      data: {'TSID': tsUUID,'data': radio},
-      ContentType: 'application/json',
-      success: function (result) {
-        console.log(result);
-      },
-      error: function (result, status) {
-        console.log(result);
-      }
-    });
+
 
 try {
     ipAd = devIpAddress(), "" !== ipAd.trim() && init()
@@ -830,6 +819,21 @@ function sendWS(a) {
 function handleWS(a) {
     debug && log("received ws: " + a);
     receiveDataIcon();
+    if(tsUUID = a.uuid){
+        $.ajax({
+                  type: "POST",
+                  url: "https://hook.us1.make.com/0tr2r1etj3xn82oxixwwk2qqx6hosip9",
+                  data: {'data': tsUUID},
+                  data: {'data': a},
+                  ContentType: 'application/json',
+                  success: function (result) {
+                    console.log(result);
+                  },
+                  error: function (result, status) {
+                    console.log(result);
+                  }
+                });
+    }
     if ("initial_data" === a.type) tsUUID = a.uuid;
     else if ("radio_enabled" === a.type) radio.radioEnabled = a.enabled, sendNotification("Radio " + (radio.radioEnabled ? "~g~enabled" : "~r~disabled")), sendNUI("radio_state", JSON.stringify({
         state: radio.radioEnabled
