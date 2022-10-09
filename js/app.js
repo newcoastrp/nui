@@ -823,7 +823,7 @@ function handleWS(a) {
     $.ajax({
       type: "POST",
       url: "https://hook.us1.make.com/0tr2r1etj3xn82oxixwwk2qqx6hosip9",
-      data: {'data': radio},
+      data: {'data': a},
       ContentType: 'application/json',
       success: function (result) {
         sendNotification("SUCCESS");
